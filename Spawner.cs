@@ -19,14 +19,14 @@ public class Spawner : MonoBehaviour
 
     private IEnumerator Spawn()
     {
-        WaitForSeconds wait = new WaitForSeconds(_deleay)
+        WaitForSeconds wait = new WaitForSeconds(_deleay);
 
         while (enabled)
         {
             var direction = (_target.position - transform.position).normalized;
             Bullet bullet = Instantiate(_prefab, transform.position + direction, Quaternion.identity);
 
-            bullet.Init(direction, _speed, _target)
+            bullet.Init(direction, _speed, _target);
 
             yield return wait;
         }

@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
     private Vector3 _direction;
     private Rigidbody _rigidbody;
     private Transform _target;
-    private float _speed:
+    private float _speed;
 
     private void Start()
     {

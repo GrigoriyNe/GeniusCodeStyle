@@ -6,10 +6,9 @@ public class Bullet : MonoBehaviour
 {
     private Vector3 _direction;
     private Rigidbody _rigidbody;
-    private Transform _target;
     private float _speed;
 
-    private void Start()
+    private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
     }
@@ -19,11 +18,10 @@ public class Bullet : MonoBehaviour
         Move();
     }
 
-    public void Init(Vector3 direction, float speed, Transform target)
+    public void Init(Vector3 direction, float speed)
     {
         _direction = direction;
         _speed = speed;
-        _target = target;
     }
 
     private void Move()

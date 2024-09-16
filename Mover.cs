@@ -13,7 +13,7 @@ public class Mover : MonoBehaviour
         _waypoints = new Transform[_waypoint.childCount];
 
         for (int i = 0; i < _waypoint.childCount; i++)
-            _waypoints[i] = _waypoint(i).GetComponent<Transform>();
+            _waypoints[i] = _waypoint.GetChild(i);
     }
 
     private void Update()

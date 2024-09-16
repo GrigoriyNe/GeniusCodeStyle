@@ -21,7 +21,7 @@ public class Spawner : MonoBehaviour
 
         while (enabled)
         {
-            var direction = (_target.position - transform.position).normalized;
+            Vector3 direction = (_target.position - transform.position).normalized;
             Bullet bullet = Instantiate(_bullet, transform.position + direction, Quaternion.identity);
 
             bullet.Init(direction, _speed);

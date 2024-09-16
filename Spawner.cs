@@ -5,12 +5,10 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private Bullet _prefab;
+    [SerializeField] private Bullet _bullet;
     [SerializeField] private Transform _target;
     [SerializeField] private float _deleay;
     [SerializeField] private float _speed;
-
-    private Transform _target;
 
     private void Start()
     {
@@ -24,9 +22,9 @@ public class Spawner : MonoBehaviour
         while (enabled)
         {
             var direction = (_target.position - transform.position).normalized;
-            Bullet bullet = Instantiate(_prefab, transform.position + direction, Quaternion.identity);
+            Bullet bullet = Instantiate(_bullet, transform.position + direction, Quaternion.identity);
 
-            bullet.Init(direction, _speed, _target);
+            bullet.Init(direction, _speed);
 
             yield return wait;
         }
